@@ -6,6 +6,7 @@
 package com.bo.wordscount;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 /**
  *
@@ -15,10 +16,11 @@ public class WordCountClient {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, URISyntaxException {
         WordCount wordCount = new WordCount();
-        wordCount.CountWordsInFile("words");
+        wordCount.CountWordsInFile("words.txt");
     }
 
 }
