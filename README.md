@@ -2,4 +2,4 @@
 - Open Netbeans IDE 11
 - Run project
 - See results in console
-- ![Image description](link-to-image)
+- ![Netbeans 11](https://github.com/dsanchestorrico/WordCount/tree/master/WordsCount/src/main/resources)
