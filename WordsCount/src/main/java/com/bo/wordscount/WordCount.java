@@ -5,7 +5,7 @@
  */
 package com.bo.wordscount;
 
-import com.sun.xml.internal.ws.api.ResourceLoader;
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
@@ -26,8 +26,7 @@ import static java.util.stream.Collectors.groupingBy;
 public class WordCount {
 
     public void CountWordsInFile(String name) throws IOException, URISyntaxException {
-        Path path = Paths.get(this.getClass().getClassLoader().getResource(name).toURI());
-        Map<String, Long> wordCount = Files.lines(path).flatMap(line -> Arrays.stream(line.trim().split(" ")))
+        Map<String, Long> wordCount = Files.lines(new File(name).toPath()).flatMap(line -> Arrays.stream(line.trim().split(" ")))
                 .map(word -> word.replaceAll("[^a-zA-Z]", "").toLowerCase().trim())
                 .filter(word -> word.length() > 0)
                 .map(word -> new AbstractMap.SimpleEntry<>(word, 1))
